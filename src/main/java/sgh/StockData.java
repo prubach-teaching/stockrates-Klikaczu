@@ -46,8 +46,8 @@ public class StockData {
     }
 
     public static void main(String[] args) throws IOException {
-        String[] stocks = new String[] { "IBM", "MSFT", "GOOG" };
-        for (String s : stocks) {
+        String[] stocks=new String[] {"IBM", "MSFT", "GOOG"};
+        for (String s : stocks){
             getAndProcessChange(s);
         }
     }

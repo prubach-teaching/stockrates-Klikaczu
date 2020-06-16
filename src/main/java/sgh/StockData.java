@@ -11,20 +11,13 @@ public class StockData {
 
     public static void getAndProcessChange(String stock) throws IOException {
         String filePath = "data_in/" + stock + ".csv";
-        //TODO HINT: You might need to check if the file doesn't already exist...
-        download("https://query1.finance.yahoo.com/v7/finance/download/" + stock +
-                                "?period1=1554504399&period2=1586126799&interval=1d&events=history",
-                        filePath);
-
         File stockDataFile=new File(filePath);
-        
-        // Checking if the file has already been created
-        
+         // Checking if the file has already been created
         if (!stockDataFile.exists()){
             download("https://query1.finance.yahoo.com/v7/finance/download/" + stock +
                     "?period1=1554504399&period2=1586126799&interval=1d&events=history",filePath);
         }
-
+        
         Scanner sc = new Scanner(stockDataFile);
         String line = sc.nextLine();
         
